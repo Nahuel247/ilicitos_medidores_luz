@@ -1,6 +1,6 @@
 # Ilícitos en medidores de luz (I parte: Desarrollo del modelo)
 
-La intervención de los medidores eléctricos son una práctica ilícita realizada con el fin de disminuir el consumo energético registrado, estas intervenciones son comunes tanto en casas como en locales. Sin embargo, hay que tener presente que generan problemas de suministro al sector o posibles incendios, poniendo en riesgo a las personas que viven o asisten al lugar o que son del sector.\
+La intervención de medidores eléctricos es una práctica ilícita realizada con el fin de disminuir el consumo energético registrado, estas intervenciones son comunes tanto en casas como en locales. Sin embargo, hay que tener presente que generan problemas de suministro al sector o posibles incendios, poniendo en riesgo a las personas que viven o asisten al lugar o que son del sector.\
 \
 En este repositorio encontraran el desarrollo metodológico para identificar, a través de Machine Learning, aquellos clientes que han intervenido su medidor eléctrico, en particular:
 
@@ -49,7 +49,7 @@ A continuación, se muestra el efecto que tiene la intervención del tipo 4 sobr
 
 [![Tipo-ilicito4.png](https://i.postimg.cc/2SjyscPt/Tipo-ilicito4.png)](https://postimg.cc/xc79HRjG)
  
-# Cross validation
+# Cross-validation
 Para asegurar la robustez del modelo y su correcta parametrización, se optó por utilizar la metodología de croos-validation, que consiste en utilizar cierto porcentaje de la muestra de desarrollo para entrenar el modelo y el resto para probar el efecto que tiene los parámetros sobre el desempeño del modelo ante datos nuevos. Para este proyecto se dejaron fijos valores como la profundidad del árbol, el porcentaje de variables que se van a utilizar, etc. y se hizo variar el número de árboles del modelo (n_estimators), con el fin de obtener el conjunto de parámetros que asegurasen la robustez del modelo ante un conjunto de datos nuevos.
 
 [![cross-validation.png](https://i.postimg.cc/4yrXpS3y/cross-validation.png)](https://postimg.cc/QKJL3S1Z)
