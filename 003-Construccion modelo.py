@@ -1,8 +1,8 @@
 
-######################################################################
-#      PROYECTO: MODELO PARA IDENTIFICAR LOS CLIENTES MÁS PROPENSO
-#                   A LA FUGA CON MACHINE LEARNING
-#####################################################################
+###################################################################################
+#      PROYECTO: MODELO PARA IDENTIFICAR ILÍCITOS EN MEDIDORES DE LUZ
+#                      CON MACHINE LEARNING
+###################################################################################
 
 #######################################
 # Autor: Nahuel Canelo
