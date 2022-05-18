@@ -25,7 +25,7 @@ En este repositorio encontraran el desarrollo metodológico para identificar, a 
 A continuación, se presentan aquellos resultados más relevantes relacionados al desarrollo metodológico, la eficiencia del modelo y su implementación.
 
 #  Consumo energético sin intervención
-Se muestra la serie de tiempo del consumo energético en los 12 meses anteriores al mes de referencia. Los valores son obtenidos desde una distribución normal a la cual se le agregó ruido.
+Se muestra la serie de tiempo del consumo energético en los 12 meses anteriores al mes de referencia, el mes 12 es el mes más antiguo (mas lejos en el pasado) y el mes 1 es el mes más cercano al de referencia, esto aplica para todas las imágenes. Los valores son obtenidos desde una distribución normal a la cual se le agregó ruido.
 
 [![Consumo-energia.png](https://i.postimg.cc/3rGLPnhY/Consumo-energia.png)](https://postimg.cc/t7Xt6d7M)
 
