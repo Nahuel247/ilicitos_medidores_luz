@@ -96,39 +96,41 @@ def patron_ilicito(porcentaje,n):
     vector=list(ilicito + no_ilicito)
     return vector
 
-
+# Definimos si el registro corresponde a un local o a una casa
 def local(x):
-    if x>0:
+    if x>0: # Si es un ilícito tiene una probabilidad de 0.6 de ser un local (1: local, 0:casa)
         valores=[1, 1, 1, 1, 1, 1, 0, 0, 0, 0]
         salida = random.choices(valores, k=1)[0]
-    else:
+    else: # Si NO es un ilícito tiene una probabilidad de 0.1 de ser un local
         valores = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         salida = random.choices(valores, k=1)[0]
     return salida
 
-
+# Definimos si el registro tiene o no el sello de seguridad roto
 def sello_roto(x):
-    if x>0:
+    if x>0: # Si es un ilícito tiene una probabilidad igual a 0.5 de tener el sello roto
+        # (1: sello roto, 0: no roto)
         valores = [1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
         salida = random.choices(valores, k=1)[0]
-    else:
+    else: # Si NO es un ilícito tiene una probabilidad igual a 0.4 de tener el sello roto
         valores = [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
         salida = random.choices(valores, k=1)[0]
     return salida
 
 
 def impedimento_visual(x):
-    if x>0:
+    if x>0:  # Si existe es un ilícito, hay una probabilidad de 0.4 de que haya un impedimento visual
+        # (1: hay un impedimento visual, 0: No hay un impedimento visual)
         valores = [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
         salida = random.choices(valores, k=1)[0]
-    else:
+    else: # Si NO existe es un ilícito, hay una probabilidad de 0.2 de que haya un impedimento visual
         valores = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
         salida = random.choices(valores, k=1)[0]
     return salida
 
-###########################################################################
-# CREAMOS LA BASE DE DATOS SEGÚN TENDENCIAS PLAUSIBLES ASOCIADAS A LA FUGA
-###########################################################################
+##############################
+# CREAMOS LA BASE DE DATOS
+##############################
 
 n=1000 # Número de clientes/registros que se van a crear
 rezagos=12 # Número de meses anteriores al mes de referencia para los cuales se crearán variables
