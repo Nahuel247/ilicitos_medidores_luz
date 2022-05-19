@@ -7,7 +7,7 @@ En este repositorio encontraran el desarrollo metodológico para identificar, a 
 * Se utilizó el modelo RandomForest, una metodología que se basa en árboles de decisiones.
 * Se construyó una base de datos con 1000 registros y una tasa de ilícitos del 15%.
 * Los datos se construyeron a partir de antecedentes y supuestos plausibles sobre el cambio en el consumo eléctrico condicionado a si existe o no intervención en el medidor y al tipo de intervención.
-* Para este proyecto, se asumió la existencia de 4 tipos de intervenciones, con sus respectivos efectos en la tendencia de consumo una vez que han sido implementados.
+* Para este proyecto, se asumió la existencia de 4 tipos de intervenciones, con sus respectivos efectos en la tendencia de consumo una vez que han sido implementados. 
 \
 **Intervención tipo 1**: Se congela el consumo energético en un valor determinado, manteniéndolo constante a través del tiempo.
 \
@@ -72,12 +72,12 @@ A continuación, se muestra la tabla de eficiencia y el número de registros que
 
 [![Tabla-eficiencia.png](https://i.postimg.cc/MGbTKtTC/Tabla-eficiencia.png)](https://postimg.cc/FfzmTy0p)
 
-# Definición de estrategía de gestión
-Según estos antecedentes si se van a visitar a todos los registros con marca 1 (según el modelo: 23 registros) 21 de ellos serían ilícitos (91%: precision), que corresponde al 54% de los ilícitos totales. Ahora, si se va a visitar a aquellos registros que tienen la probabilidad más alta de ilícito (último tramo: 25 registros) 22 de ello serían ilícito (88%), que corresponden al 56% de los ilícitos totales. Por otro lado, si va a visitar a los dos deciles más riesgosos, se estaría cubriendo el 85% de los ilícitos totales, sin embargo de los 50 regístros que se irá a visitar solo el 62% serán ilícitos. Dado lo anterior, solo basta considerar el costo y la ganacia de ir a visitar n registros con x% de ilícito para determinar la estrategía de gestión optima.
+# Estrategia de gestión
+Según estos antecedentes si se van a visitar a todos los registros con marca 1 (según el modelo: 23 registros) 21 de ellos serían ilícitos (91%: precision), que corresponde al 54% de los ilícitos totales. Ahora, si se va a visitar a aquellos registros que tienen la probabilidad más alta de ilícito (último tramo: 25 registros) 22 de ello serían ilícito (88%), que corresponden al 56% de los ilícitos totales (22/39). Por otro lado, si va a visitar a los dos deciles más riesgosos, se estaría cubriendo el 85% (33/39) de los ilícitos totales, sin embargo, de los 50 registros que se irá a visitar solo el 62% (31/50) serían ilícitos. Dado lo anterior, solo basta considerar el costo y la ganancia de ir a visitar n registros con x% de ilícito para determinar la estrategia de gestión optima.
 
 
 
 # SIGUIENTES ETAPAS
 * Desarrollo de un análisis al modelo y definición de gestiones
 * Realizar análisis según tipo de intervención para guiar la gestión de aquellos que generen mayor retorno.
-* Desarrollo de un Dashbord para su ejecución mensual
+* Desarrollo de un Dashbord para su ejecución 
