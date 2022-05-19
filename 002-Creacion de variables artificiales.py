@@ -50,6 +50,3 @@ data_artificial.shape
 
 # Nombre de las columnas
 data_artificial.columns
-
-
-# Se observa que se han creado 51 variables artificiales
