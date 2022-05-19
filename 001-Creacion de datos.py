@@ -54,11 +54,13 @@ def tendencia(x, rezagos, valor_max):
 # Si el cliente no ha cometido ilícito, se construyen variables históricas a partir de una función normal
 
 # Tipos de ilícitos y su descripción
-# Abrupto: caída abrupta en el consumo y luego mantenido
-# Porcentual: caída porcentual del consumo
-# Puntual: disminución ciertos meses
-# Decreciente: caída porcentual decreciente en el consumo
-
+#tipo 1: Se congela el consumo energético en un valor determinado, manteniéndolo constante a través del tiempo.
+#tipo 2: Se reduce el consumo energético en cierto valor porcentual, ej. lo reduce en un 20% cada mes,
+# permitiendo la variación mensual y estacional.
+#tipo 3: Se reduce el consumo energético en ciertos periodos, siendo estos decididos por el infractor
+# (tanto en frecuencia como en cantidad).
+#tipo 4: Se reduce de forma paulatina el consumo energético, llegando a reducirse hasta el 10% del valor real
+#tipo 0: Se utiliza para aquellos registros que no cometieron ilícitos
 
 def tipo_ilicito(x, x_valores):
     print(x_valores)
@@ -80,11 +82,10 @@ def tipo_ilicito(x, x_valores):
         fin=list(np.linspace(0.9,0.1,len(fin)))
         salida = salida * list(inicio + fin)
     else:
-        salida=salida
+        salida=salida # no hay intervención
     return salida
 
-# Creamos una función cuya salida sean los ilícitos y los tipos de ilícitos
-
+# Creamos una función cuya salida sean los ilícitos y la frecuencia de los tipos de ilícitos
 def patron_ilicito(porcentaje,n):
     n_ones=round((porcentaje/100)*n)
     ilicito1 = list(np.ones(round(10*n_ones/100))*1)
@@ -117,7 +118,7 @@ def sello_roto(x):
         salida = random.choices(valores, k=1)[0]
     return salida
 
-
+# Definimos si el registro tiene o no un impedimento visual para inspeccionar el medidor
 def impedimento_visual(x):
     if x>0:  # Si existe es un ilícito, hay una probabilidad de 0.4 de que haya un impedimento visual
         # (1: hay un impedimento visual, 0: No hay un impedimento visual)
@@ -174,5 +175,18 @@ def plot_data(data,tipo_ilicito,rezagos,n):
             title="Variación histórica del consumo")
     return fig
 
+
+# Visualizamos registros sin intervención
+plot_data(data,0,12,3)
+
+# Visualizamos registros con intervención tipo 1
 plot_data(data,1,12,3)
 
+# Visualizamos registros con intervención tipo 2
+plot_data(data,2,12,3)
+
+# Visualizamos registros con intervención tipo 3
+plot_data(data,3,12,3)
+
+# Visualizamos registros con intervención tipo 4
+plot_data(data,4,12,3)
